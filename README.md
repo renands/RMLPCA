@@ -26,10 +26,10 @@ Above an example to do it on your Windows system:
 
 * Get the repository https and clone the project 
 
-![cloning tutorial](first.gif)
+![cloning tutorial](www/first.gif)
 
 * Install the package RMLPCA via devtools
 
-![installation tutorial](second.gif)
+![installation tutorial](www/second.gif)
 
 
