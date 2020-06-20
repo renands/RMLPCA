@@ -154,25 +154,3 @@ mlpca_c <- function(X,Xsd,p){
   return(result)
 
 }
-
-#
-# X = read.csv("data.measured.csv")
-# X <- as.matrix(X)
-# Xsd = read.csv("data.error.csv")
-# Xsd <- as.matrix(Xsd)
-# p = 4
-#
-#
-# '
-# teste <- mlpca_c(X,Xsd,4)
-#
-#
-# resultado <- t(teste$V%*%teste$S%*%t(teste$U))
-# resultado_matlab <- as.matrix(read.csv("matlab_result_20.csv",header = FALSE))
-# all.equal(resultado,resultado_matlab)
-
-
-
-
-
-
