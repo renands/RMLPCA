@@ -1,7 +1,14 @@
+options(encoding = "UTF-8")
+
 #' @title Maximum Likelihood Principal Component Analysis for Mode C Error
 #' Conditions
 #'
+#' @description  R implementation of Maximum Likelihood Principal Component
+#' Analisys proposed in Wentzell, Peter D., et al. "Maximum likelihood principal
+#' component analysis." Journal of Chemometrics: A Journal of the Chemometrics
+#' Society 11.4 (1997): 339-366.
 #' @author Renan Santos Barbosa
+#'
 #' @param X MxN matrix of measurements
 #' @param Xsd MxN matrix of measurements error standard deviations
 #' @param p Rank of the model's subspace, p must be than the minimum of M and N
@@ -27,7 +34,27 @@
 #'
 #' @exportClass list
 #' @export
+#' @encoding UTF-8
 #'
+#' @example set.seed(123)
+#'
+#' X <- matrix(rnorm(300,
+#'                   mean = 10,
+#'                   sd = 5),
+#'             nrow = 3,
+#'             ncol = 100,
+#'             byrow = FALSE)
+#'
+#' Xsd <- matrix(rgamma(300,
+#'                      shape = 1),
+#'               nrow = 3,
+#'               ncol = 100,
+#'               byrow = FALSE)
+#'
+#' p <- 2
+#'
+#' results <- RMLPCA::mlpca_c(X,Xsd,p)
+
 mlpca_c <- function(X,Xsd,p){
 
   m <- dim(x = X)[1]
@@ -82,7 +109,6 @@ mlpca_c <- function(X,Xsd,p){
   while(ErrFlag < 0){
 
     Count <- Count + 1 # Loop counter
-    print(Count)
 
     # Evaluate objective function ----------------------------------------------
 
