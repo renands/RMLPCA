@@ -3,10 +3,10 @@ options(encoding = "UTF-8")
 #' @title Maximum Likelihood Principal Component Analysis for Mode C Error
 #' Conditions
 #'
-#' @description  R implementation of Maximum Likelihood Principal Component
-#' Analisys proposed in Wentzell, Peter D., et al. "Maximum likelihood principal
-#' component analysis." Journal of Chemometrics: A Journal of the Chemometrics
-#' Society 11.4 (1997): 339-366.
+#' @description Performs maximum likelihood principal components analysis for
+#' mode C error conditions (independent errors, general heteroscedastic
+#' case).  Employs ALS algorithm.
+#'
 #' @author Renan Santos Barbosa
 #'
 #' @param X MxN matrix of measurements

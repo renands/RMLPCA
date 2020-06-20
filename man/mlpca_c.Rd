@@ -23,10 +23,9 @@ with 0 indicating normal termination and 1 indicating the maximum number of
 iterations have been exceeded.
 }
 \description{
-R implementation of Maximum Likelihood Principal Component
-Analisys proposed in Wentzell, Peter D., et al. "Maximum likelihood principal
-component analysis." Journal of Chemometrics: A Journal of the Chemometrics
-Society 11.4 (1997): 339-366.
+Performs maximum likelihood principal components analysis for
+mode C error conditions (independent errors, general heteroscedastic
+case).  Employs ALS algorithm.
 }
 \details{
 The returned parameters, U, S and V, are analogs to the
