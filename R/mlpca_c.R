@@ -33,6 +33,7 @@ options(encoding = "UTF-8")
 #' Society 11.4 (1997): 339-366.
 #'
 #' @exportClass list
+#' @import RSpectra
 #' @export
 #' @encoding UTF-8
 #'
@@ -99,7 +100,9 @@ mlpca_c <- function(X,Xsd,p){
 
   DecomX <- RSpectra::svds(X,p) # Decompose adjusted matrix
   U <- DecomX$u
-  S <- diag(DecomX$d)
+  S <- diag(DecomX$d,
+            nrow = length(DecomX$d),
+            ncol = length(DecomX$d))
   V <- DecomX$v
 
   Count <- 0 # Loop counter
@@ -151,7 +154,9 @@ mlpca_c <- function(X,Xsd,p){
       Sold <- Sobj # Save most recent objective function
       DecomMLX <- RSpectra::svds(MLX,p) # Decompose Model values
       U <- DecomMLX$u
-      S <- diag(DecomMLX$d)
+      S <- diag(DecomMLX$d,
+                nrow = length(DecomMLX$d),
+                ncol = length(DecomMLX$d))
       V <- DecomMLX$v
 
       X <- t(X) # Flip matrix
@@ -167,7 +172,9 @@ mlpca_c <- function(X,Xsd,p){
 
   DecomFinal <- RSpectra::svds(MLX,p)
   U <- DecomFinal$u
-  S <- diag(DecomFinal$d)
+  S <- diag(DecomFinal$d,
+            nrow = length(DecomFinal$d),
+            ncol = length(DecomFinal$d))
   V <- DecomFinal$v
   Ssq <- Sobj
 
