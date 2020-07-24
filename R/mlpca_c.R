@@ -39,20 +39,20 @@ options(encoding = "UTF-8")
 #'
 #' @example set.seed(123)
 #'
-#' X <- matrix(rnorm(300,
-#'                   mean = 10,
-#'                   sd = 5),
-#'             nrow = 3,
-#'             ncol = 100,
-#'             byrow = FALSE)
-#'
-#' Xsd <- matrix(rgamma(300,
-#'                      shape = 1),
-#'               nrow = 3,
-#'               ncol = 100,
-#'               byrow = FALSE)
-#'
-#' p <- 2
+# X <- matrix(rnorm(300,
+#                   mean = 10,
+#                   sd = 5),
+#             nrow = 3,
+#             ncol = 100,
+#             byrow = FALSE)
+#
+# Xsd <- matrix(rgamma(300,
+#                      shape = 1),
+#               nrow = 3,
+#               ncol = 100,
+#               byrow = FALSE)
+#
+# p <- 2
 #'
 #' results <- RMLPCA::mlpca_c(X,Xsd,p)
 
