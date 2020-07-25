@@ -81,12 +81,6 @@ mlpca_b <- function(X,Xsd,p){
 
   }
 
-
-  OnesMatrix <- matrix(data = 1,
-                       ncol = 1,
-                       nrow = m
-                       )
-
   SclMat <- Xsd
 
   Xsc <- X/SclMat
