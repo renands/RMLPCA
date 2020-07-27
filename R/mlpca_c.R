@@ -89,7 +89,7 @@ mlpca_c <- function(X,Xsd,p){
 
 
   ConvLim <- 1e-10 # Convergence Limit
-  MaxIter <- 2000 # Maximum no. of iterations
+  MaxIter <- 20000 # Maximum no. of iterations
   VarMUlt <- 1000 # Multiplier for missing data
   VarX <- Xsd^2 # Convert sd's to variances
   IndX <- which(is.na(VarX)) # Find missing values

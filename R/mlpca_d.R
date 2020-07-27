@@ -80,13 +80,13 @@ mlpca_d <- function(X, Cov, p) {
   V1 <- DecomCov$v
 
   CovRank <- Matrix::rankMatrix(Cov)
-
   if (CovRank < n) { # If the covariance matrix is singular, then
     # expand uniformly in deficient directions
 
     Scale <- c(
-      sqrt(diag(matrix(S1[1:CovRank, 1:CovRank]))),
-      (matrix(1, 1, n - CovRank) * sqrt(S1[1:CovRank, 1:CovRank]) * 0.01)
+      sqrt(diag(matrix(S1[1:CovRank, 1:CovRank],CovRank,CovRank))),
+      (matrix(1, 1, n - CovRank) *
+         sqrt(S1[CovRank,CovRank]) * 0.01)
     )
   } else {
     Scale <- sqrt(diag(S1))
