@@ -1,4 +1,4 @@
-# RMLPCA <img src='www/HexRMLPCA.png' align="right" height="135" /></a>
+# RMLPCA <img src='www/HEXRMLPCA.png' align="right" height="135" /></a>
 R Implementation of Maximum Likelihood Principal Component Analysis
 
 ## Description
