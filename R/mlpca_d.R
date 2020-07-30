@@ -84,9 +84,9 @@ mlpca_d <- function(X, Cov, p) {
     # expand uniformly in deficient directions
 
     Scale <- c(
-      sqrt(diag(matrix(S1[1:CovRank, 1:CovRank],CovRank,CovRank))),
+      sqrt(diag(matrix(S1[1:CovRank, 1:CovRank], CovRank, CovRank))),
       (matrix(1, 1, n - CovRank) *
-         sqrt(S1[CovRank,CovRank]) * 0.01)
+        sqrt(S1[CovRank, CovRank]) * 0.01)
     )
   } else {
     Scale <- sqrt(diag(S1))
