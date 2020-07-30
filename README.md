@@ -1,4 +1,4 @@
-# RMLPCA
+# RMLPCA <img src='www/HexRMLPCA.png' align="right" height="135" /></a>
 R Implementation of Maximum Likelihood Principal Component Analysis
 
 ## Description
@@ -20,16 +20,8 @@ install.packages("devtools")
 
 ## Installation
 
-This R package is a private repository on Github, it's necessary to clone the reposository to your computer.
+This R package is a public repository on Github, to install the package on your machine just type the following command:
 
-Above an example to do it on your Windows system:
-
-* Get the repository https and clone the project 
-
-![cloning tutorial](www/first.gif)
-
-* Install the package RMLPCA via devtools
-
-![installation tutorial](www/second.gif)
-
-
+``` R
+devtools::install_git("https://github.com/renanestatcamp/RMLPCA")
+```
