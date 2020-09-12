@@ -12,6 +12,7 @@ options(encoding = "UTF-8")
 #' @param X MxN matrix of measurements
 #' @param Xsd MxN matrix of measurements error standard deviations
 #' @param p Rank of the model's subspace, p must be than the minimum of M and N
+#' @param MaxIter Maximum no. of iterations
 #'
 #' @return  The parameters returned are the results of SVD on the estimated
 #' subspace. The quantity Ssq represents the sum of squares of weighted
@@ -56,7 +57,7 @@ options(encoding = "UTF-8")
 #'
 #' results <- RMLPCA::mlpca_c(X,Xsd,p)
 
-mlpca_c <- function(X,Xsd,p){
+mlpca_c <- function(X,Xsd,p,MaxIter = 20000){
 
   m <- dim(x = X)[1]
   n <- dim(x = X)[2]
@@ -89,7 +90,7 @@ mlpca_c <- function(X,Xsd,p){
 
 
   ConvLim <- 1e-10 # Convergence Limit
-  MaxIter <- 20000 # Maximum no. of iterations
+  MaxIter <- MaxIter # Maximum no. of iterations
   VarMUlt <- 1000 # Multiplier for missing data
   VarX <- Xsd^2 # Convert sd's to variances
   IndX <- which(is.na(VarX)) # Find missing values
@@ -141,7 +142,7 @@ mlpca_c <- function(X,Xsd,p){
       if( Count > MaxIter){ # Maximum iterations
 
         ErrFlag <- 1
-        warning("mlpca_c:err5 - Maximum iterations exceeded")
+        stop("mlpca_c:err5 - Maximum iterations exceeded")
 
       }
 
