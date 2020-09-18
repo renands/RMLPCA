@@ -6,7 +6,7 @@
 \title{Maximum Likelihood Principal Component Analysis for Mode C Error
 Conditions}
 \usage{
-mlpca_c(X, Xsd, p)
+mlpca_c(X, Xsd, p, MaxIter = 20000)
 }
 \arguments{
 \item{X}{MxN matrix of measurements}
@@ -14,6 +14,8 @@ mlpca_c(X, Xsd, p)
 \item{Xsd}{MxN matrix of measurements error standard deviations}
 
 \item{p}{Rank of the model's subspace, p must be than the minimum of M and N}
+
+\item{MaxIter}{Maximum no. of iterations}
 }
 \value{
 The parameters returned are the results of SVD on the estimated
