@@ -135,7 +135,7 @@ mlpca_d <- function(X, Cov, p) {
 
   V <- DecomXCalc$v
 
-  if(p == 1){
+  if( p == 1 ){
     S <- diag(S[1:p, 1:p],
               ncol = p,
               nrow = p

@@ -8,7 +8,7 @@ Description: R implementation of Maximum Likelihood Principal Component Analisys
     proposed in Wentzell, Peter D., et al. "Maximum likelihood principal 
     component analysis." Journal of Chemometrics: A Journal of the Chemometrics
     Society 11.4 (1997): 339-366.
-License: 
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: 
