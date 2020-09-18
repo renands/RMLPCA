@@ -135,10 +135,17 @@ mlpca_d <- function(X, Cov, p) {
 
   V <- DecomXCalc$v
 
-  S <- diag(S[1:p, 1:p],
-    ncol = p,
-    nrow = p
-  )
+  if(p == 1){
+    S <- diag(S[1:p, 1:p],
+              ncol = p,
+              nrow = p
+    )
+  } else {
+
+    S <- S[1:p,1:p]
+
+  }
+
 
   U <- matrix(U[, 1:p],
     nrow = m,
