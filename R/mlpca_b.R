@@ -1,17 +1,36 @@
-#' Maximum Likelihood Principal Component Analysis for Mode B Error
-#' Conditions
+#' Maximum likelihood principal component analysis for mode B error
+#' conditions
 #'
-#' @param X MxN matrix of measurements
-#' @param Xsd MxN matrix of measurements error standard deviations
-#' @param p Rank of the model's subspace, p must be than the minimum of M and N
+#' @param X MxN matrix of measurements.
+#' @param Xsd MxN matrix of measurements error standard deviations.
+#' @param p Rank of the model's subspace, p must be than the minimum of M and N.
 #'
 #' @return The parameters returned are the results of SVD on the estimated
-#' subspace. The quantity Ssq represents the sum of squares of weighted
-#' residuals.
+#'   subspace. The quantity Ssq represents the sum of squares of weighted
+#'   residuals. All the results are nested in a list format.
 #'
 #' @export
 #'
 #' @examples
+#'
+#' library(RMLPCA)
+#' data(data_clean)
+#' data(data_error_b)
+#' data(sds_b)
+#'
+#' # data that you will usually have on hands
+#' data_noisy <- data_clean + data_error_b
+#'
+#' # run mlpca_b with rank p = 2
+#' results <- RMLPCA::mlpca_b(
+#'   X = data_noisy,
+#'   Xsd = sds_b,
+#'   p = 2
+#' )
+#'
+#' # estimated clean dataset
+#' data_cleaned_mlpca <- results$U %*% results$S %*% t(results$V)
+#'
 mlpca_b <- function(X, Xsd, p) {
   m <- base::dim(x = X)[1]
   n <- base::dim(x = X)[2]

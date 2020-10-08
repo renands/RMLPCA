@@ -24,3 +24,5 @@ Suggests:
 Imports: 
     base,
     RSpectra
+Depends: 
+    R (>= 2.10)

@@ -2,24 +2,45 @@
 % Please edit documentation in R/mlpca_b.R
 \name{mlpca_b}
 \alias{mlpca_b}
-\title{Maximum Likelihood Principal Component Analysis for Mode B Error
-Conditions}
+\title{Maximum likelihood principal component analysis for mode B error
+conditions}
 \usage{
 mlpca_b(X, Xsd, p)
 }
 \arguments{
-\item{X}{MxN matrix of measurements}
+\item{X}{MxN matrix of measurements.}
 
-\item{Xsd}{MxN matrix of measurements error standard deviations}
+\item{Xsd}{MxN matrix of measurements error standard deviations.}
 
-\item{p}{Rank of the model's subspace, p must be than the minimum of M and N}
+\item{p}{Rank of the model's subspace, p must be than the minimum of M and N.}
 }
 \value{
 The parameters returned are the results of SVD on the estimated
 subspace. The quantity Ssq represents the sum of squares of weighted
-residuals.
+residuals. All the results are nested in a list format.
 }
 \description{
-Maximum Likelihood Principal Component Analysis for Mode B Error
-Conditions
+Maximum likelihood principal component analysis for mode B error
+conditions
+}
+\examples{
+
+library(RMLPCA)
+data(data_clean)
+data(data_error_b)
+data(sds_b)
+
+# data that you will usually have on hands
+data_noisy <- data_clean + data_error_b
+
+# run mlpca_b with rank p = 2
+results <- RMLPCA::mlpca_b(
+  X = data_noisy,
+  Xsd = sds_b,
+  p = 2
+)
+
+# estimated clean dataset
+data_cleaned_mlpca <- results$U \%*\% results$S \%*\% t(results$V)
+
 }
