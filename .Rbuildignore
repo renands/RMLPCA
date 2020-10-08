@@ -1,4 +1,4 @@
-^packrat/
-^\.Rprofile$
-^.*\.Rproj$
+^RMLPCA\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
