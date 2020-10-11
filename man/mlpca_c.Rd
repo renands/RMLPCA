@@ -26,7 +26,8 @@ iterations have been exceeded.
 \description{
 Performs maximum likelihood principal components analysis for
 mode C error conditions (independent errors, general heteroscedastic
-case).  Employs ALS algorithm.
+case).
+Employs ALS algorithm.
 }
 \details{
 The returned parameters, U, S and V, are analogs to the

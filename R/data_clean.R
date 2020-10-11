@@ -6,7 +6,7 @@
 #' Journal of Chemometrics 26.6 (2012): 264-281.
 #'
 #' @format A matrix with 300 rows and 20 columns
-#' @source Wentzell, P. D., and S. Hou.
+#' @references Wentzell, P. D., and S. Hou.
 #' "Exploratory data analysis with noisy measurements."
 #' Journal of Chemometrics 26.6 (2012): 264-281.
 #'

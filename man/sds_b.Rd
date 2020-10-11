@@ -7,10 +7,6 @@
 \format{
 A matrix with 300 rows and 20 columns
 }
-\source{
-Wentzell, P. D. "Other topics in soft-modeling:
-maximum likelihood-based soft-modeling methods." (2009): 507-558.
-}
 \usage{
 sds_b
 }
@@ -20,5 +16,9 @@ that is necessary to run mlpca_b.
 The main ideia is described in figure 3 on Wentzell, P. D.
 "Other topics in soft-modeling: maximum likelihood-based soft-modeling
 methods." (2009): 507-558.
+}
+\references{
+Wentzell, P. D. "Other topics in soft-modeling:
+maximum likelihood-based soft-modeling methods." (2009): 507-558.
 }
 \keyword{datasets}

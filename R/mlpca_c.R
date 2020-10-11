@@ -2,8 +2,9 @@
 #' conditions
 #'
 #' @description Performs maximum likelihood principal components analysis for
-#' mode C error conditions (independent errors, general heteroscedastic
-#' case).  Employs ALS algorithm.
+#'   mode C error conditions (independent errors, general heteroscedastic
+#'   case).
+#'   Employs ALS algorithm.
 #'
 #' @param X MxN matrix of measurements
 #' @param Xsd MxN matrix of measurements error standard deviations
@@ -46,15 +47,15 @@
 #' # estimated clean dataset
 #' data_cleaned_mlpca <- results$U %*% results$S %*% t(results$V)
 mlpca_c <- function(X, Xsd, p, MaxIter = 20000) {
-  m <- dim(x = X)[1]
-  n <- dim(x = X)[2]
+  m <- base::dim(x = X)[1]
+  n <- base::dim(x = X)[2]
 
-  if (p > min(m, n)) {
+  if (p > base::min(m, n)) {
     stop("mlpca_c:err1 - Invalid rank for MLPCA decomposition")
   }
 
-  ml <- dim(x = Xsd)[1]
-  nl <- dim(x = Xsd)[2]
+  ml <- base::dim(x = Xsd)[1]
+  nl <- base::dim(x = Xsd)[2]
 
   if (m != ml | n != nl) {
     stop("mlpca_c:err2 - Dimensions of data and standard deviations do not matchn")
@@ -76,17 +77,17 @@ mlpca_c <- function(X, Xsd, p, MaxIter = 20000) {
   MaxIter <- MaxIter # Maximum no. of iterations
   VarMUlt <- 1000 # Multiplier for missing data
   VarX <- Xsd^2 # Convert sd's to variances
-  IndX <- which(is.na(VarX)) # Find missing values
-  VarMax <- max(VarX, na.rm = TRUE) # Maximum variance
+  IndX <- base::which(base::is.na(VarX)) # Find missing values
+  VarMax <- base::max(VarX, na.rm = TRUE) # Maximum variance
   VarX[IndX] <- VarMax * VarMUlt # Give missing values large variance
 
   # Generate Initial estimates assuming homocedastic errors --------------------
 
   DecomX <- RSpectra::svds(X, p) # Decompose adjusted matrix
   U <- DecomX$u
-  S <- diag(DecomX$d,
-    nrow = length(DecomX$d),
-    ncol = length(DecomX$d)
+  S <- base::diag(DecomX$d,
+    nrow = base::length(DecomX$d),
+    ncol = base::length(DecomX$d)
   )
   V <- DecomX$v
 
@@ -100,25 +101,25 @@ mlpca_c <- function(X, Xsd, p, MaxIter = 20000) {
     # Evaluate objective function ----------------------------------------------
 
     Sobj <- 0 # Initialize sum
-    MLX <- matrix(
+    MLX <- base::matrix(
       data = 0,
-      nrow = dim(X)[1],
-      ncol = dim(X)[2]
+      nrow = base::dim(X)[1],
+      ncol = base::dim(X)[2]
     )
 
     for (i in 1:n) {
-      Q <- diag(1 / VarX[, i]) # Inverse of error covariance matrix
-      FInter <- solve(t(U) %*% Q %*% U) # Intermediate calculation
-      MLX[, i] <- U %*% (FInter %*% (t(U) %*% (Q %*% X[, i]))) # Max.Lik Estimates
-      Dx <- matrix(data = X[, i] - MLX[, i]) # Residual Vector
-      Sobj <- Sobj + t(Dx) %*% Q %*% Dx # update objective function
+      Q <- base::diag(1 / VarX[, i]) # Inverse of error covariance matrix
+      FInter <- base::solve(base::t(U) %*% Q %*% U) # Intermediate calculation
+      MLX[, i] <- U %*% (FInter %*% (base::t(U) %*% (Q %*% X[, i]))) # Max.Lik Estimates
+      Dx <- base::matrix(data = X[, i] - MLX[, i]) # Residual Vector
+      Sobj <- Sobj + base::t(Dx) %*% Q %*% Dx # update objective function
     }
 
 
     # Check for convergence or excessive iterations ----------------------------
 
     if (Count %% 2 == 1) { # check on odd iterations only
-      ConvCalc <- abs(Sold - Sobj) / Sobj # Convergence Criterion
+      ConvCalc <- base::abs(Sold - Sobj) / Sobj # Convergence Criterion
       if (ConvCalc < ConvLim) {
         ErrFlag <- 0
       }
@@ -136,15 +137,15 @@ mlpca_c <- function(X, Xsd, p, MaxIter = 20000) {
       Sold <- Sobj # Save most recent objective function
       DecomMLX <- RSpectra::svds(MLX, p) # Decompose Model values
       U <- DecomMLX$u
-      S <- diag(DecomMLX$d,
-        nrow = length(DecomMLX$d),
-        ncol = length(DecomMLX$d)
+      S <- base::diag(DecomMLX$d,
+        nrow = base::length(DecomMLX$d),
+        ncol = base::length(DecomMLX$d)
       )
       V <- DecomMLX$v
 
-      X <- t(X) # Flip matrix
-      VarX <- t(VarX) # And the variances
-      n <- ncol(X) # Adjust no. of columns
+      X <- base::t(X) # Flip matrix
+      VarX <- base::t(VarX) # And the variances
+      n <- base::ncol(X) # Adjust no. of columns
       U <- V # V becomes U in for transpose
     }
 
@@ -153,14 +154,14 @@ mlpca_c <- function(X, Xsd, p, MaxIter = 20000) {
 
   DecomFinal <- RSpectra::svds(MLX, p)
   U <- DecomFinal$u
-  S <- diag(DecomFinal$d,
-    nrow = length(DecomFinal$d),
-    ncol = length(DecomFinal$d)
+  S <- base::diag(DecomFinal$d,
+    nrow = base::length(DecomFinal$d),
+    ncol = base::length(DecomFinal$d)
   )
   V <- DecomFinal$v
   Ssq <- Sobj
 
-  result <- list(
+  result <- base::list(
     "U" = U,
     "S" = S,
     "V" = V,
