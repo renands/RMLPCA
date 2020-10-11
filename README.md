@@ -1,18 +1,4 @@
----
-output:
-  github_document:
-    html_preview: true
----
-
-```{r,include = FALSE, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/"
-)
-```
-
-# RMLPCA <img src='HEXRMLPCA.png' align="right" height="135" /></a>
+# RMLPCA <img src='man/figures/HEXRMLPCA.png' align="right" height="135" /></a>
 R Implementation of Maximum Likelihood Principal Component Analysis
 
 ## Description
