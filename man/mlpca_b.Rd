@@ -2,8 +2,7 @@
 % Please edit documentation in R/mlpca_b.R
 \name{mlpca_b}
 \alias{mlpca_b}
-\title{Maximum likelihood principal component analysis for mode B error
-conditions}
+\title{Maximum likelihood principal component analysis for mode B error conditions}
 \usage{
 mlpca_b(X, Xsd, p)
 }

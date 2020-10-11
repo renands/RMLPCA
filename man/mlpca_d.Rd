@@ -2,8 +2,7 @@
 % Please edit documentation in R/mlpca_d.R
 \name{mlpca_d}
 \alias{mlpca_d}
-\title{Maximum likelihood principal component analysis for mode D error
-conditions}
+\title{Maximum likelihood principal component analysis for mode D error conditions}
 \usage{
 mlpca_d(X, Cov, p)
 }

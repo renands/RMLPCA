@@ -1,5 +1,4 @@
-#' Maximum likelihood principal component analysis for mode C error
-#' conditions
+#' Maximum likelihood principal component analysis for mode C error conditions
 #'
 #' @description Performs maximum likelihood principal components analysis for
 #'   mode C error conditions (independent errors, general heteroscedastic

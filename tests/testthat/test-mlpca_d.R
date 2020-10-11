@@ -9,7 +9,7 @@ test_that("mlpca_d() compute mlpca for case d error
   # data that you will usually have on hands
   data_noisy <- data_clean + data_error_d
 
-  # run mlpca_c with rank p = 5
+  # run mlpca_d with rank p = 2
   results <- RMLPCA::mlpca_d(
     X = data_noisy,
     Cov = cov_d,

@@ -23,7 +23,8 @@ Suggests:
     testthat
 Imports: 
     base,
-    RSpectra,
-    Matrix
+    Matrix,
+    pracma,
+    RSpectra
 Depends: 
     R (>= 2.10)

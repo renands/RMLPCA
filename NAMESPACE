@@ -3,3 +3,4 @@
 export(mlpca_b)
 export(mlpca_c)
 export(mlpca_d)
+export(mlpca_e)

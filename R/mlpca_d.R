@@ -1,5 +1,4 @@
-#' Maximum likelihood principal component analysis for mode D error
-#' conditions
+#' Maximum likelihood principal component analysis for mode D error conditions
 #'
 #' @description Performs maximum likelihood principal components analysis for
 #'   mode D error conditions (commom row covariance matrices).

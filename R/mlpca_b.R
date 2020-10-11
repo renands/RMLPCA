@@ -1,5 +1,4 @@
-#' Maximum likelihood principal component analysis for mode B error
-#' conditions
+#' Maximum likelihood principal component analysis for mode B error conditions
 #'
 #' @description Performs maximum likelihood principal components analysis for
 #'   mode B error conditions (independent errors, homoscedastic within a column).
