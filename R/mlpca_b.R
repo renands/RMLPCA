@@ -1,6 +1,11 @@
 #' Maximum likelihood principal component analysis for mode B error
 #' conditions
 #'
+#' @description Performs maximum likelihood principal components analysis for
+#'   mode B error conditions (independent errors, homoscedastic within a column).
+#'   Equivalent to perfoming PCA on data scaled by the error SD, but results are
+#'   rescaled to the original space.
+#'
 #' @param X MxN matrix of measurements.
 #' @param Xsd MxN matrix of measurements error standard deviations.
 #' @param p Rank of the model's subspace, p must be than the minimum of M and N.
@@ -8,6 +13,14 @@
 #' @return The parameters returned are the results of SVD on the estimated
 #'   subspace. The quantity Ssq represents the sum of squares of weighted
 #'   residuals. All the results are nested in a list format.
+#'
+#' @details The returned parameters, U, S and V, are analogs to the
+#'   truncated SVD solution, but have somewhat different properties since they
+#'   represent the MLPCA solution. In particular, the solutions for different
+#'   values of p are not necessarily nested (the rank 1 solution may not be in
+#'   the space of the rank 2 solution) and the eigenvectors do not necessarily
+#'   account for decreasing amounts of variance, since MLPCA is a subspace
+#'   modeling technique and not a variance modeling technique.
 #'
 #' @export
 #'
@@ -30,7 +43,6 @@
 #'
 #' # estimated clean dataset
 #' data_cleaned_mlpca <- results$U %*% results$S %*% t(results$V)
-#'
 mlpca_b <- function(X, Xsd, p) {
   m <- base::dim(x = X)[1]
   n <- base::dim(x = X)[2]
