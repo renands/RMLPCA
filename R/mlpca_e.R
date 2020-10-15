@@ -1,4 +1,4 @@
-#' Maximum likelihood orincipal component analysis for mode E error conditions
+#' Maximum likelihood principal component analysis for mode E error conditions
 #'
 #' @description  Performs maximum likelihood principal components analysis for
 #'   mode E error conditions (correlated errors, with a different covariance

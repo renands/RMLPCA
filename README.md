@@ -3,7 +3,7 @@ R Implementation of Maximum Likelihood Principal Component Analysis
 
 ## Description
 
-R implementation of Maximum Likelihood Principal Component Analisys
+R implementation of Maximum Likelihood Principal Component Analysis
     proposed in Wentzell, Peter D., et al. "Maximum likelihood principal 
     component analysis." Journal of Chemometrics: A Journal of the Chemometrics
     Society 11.4 (1997): 339-366.
