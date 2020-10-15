@@ -58,6 +58,11 @@ results <- RMLPCA::mlpca_e(
 # estimated clean dataset
 data_cleaned_mlpca <- results$U \%*\% results$S \%*\% t(results$V)
 }
+\references{
+Wentzell, P. D.
+"Other topics in soft-modeling: maximum likelihood-based soft-modeling
+methods." (2009): 507-558.
+}
 \author{
 Renan Santos Barbosa
 }

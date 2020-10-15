@@ -24,6 +24,10 @@
 #'   account for decreasing amounts of variance, since MLPCA is a subspace
 #'   modeling technique and not a variance modeling technique.
 #'
+#' @references Wentzell, P. D.
+#'   "Other topics in soft-modeling: maximum likelihood-based soft-modeling
+#'   methods." (2009): 507-558.
+#'
 #' @export
 #'
 #' @examples

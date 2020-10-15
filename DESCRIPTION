@@ -7,11 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "renansantosbarbosa@usp.br")
 Description: R implementation of Maximum Likelihood Principal Component Analysis
-    proposed in Wentzell, Peter D., et al. "Maximum likelihood principal 
-    component analysis." Journal of Chemometrics: A Journal of the Chemometrics
-    Society 11.4 (1997): 339-366. 
     The main idea of this package is to have an alternative way of PCA for 
-    dimensionality reduction that considers measurement errors.
+    subspace modeling that considers measurement errors.
 URL: https://github.com/renanestatcamp/RMLPCA
 BugReports: https://github.com/renanestatcamp/RMLPCA/issues
 License: MIT + file LICENSE
