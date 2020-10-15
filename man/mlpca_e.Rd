@@ -39,6 +39,7 @@ modeling technique and not a variance modeling technique.
 }
 \examples{
 
+\dontrun{
 library(RMLPCA)
 data(data_clean_e)
 data(data_error_e)
@@ -57,6 +58,7 @@ results <- RMLPCA::mlpca_e(
 
 # estimated clean dataset
 data_cleaned_mlpca <- results$U \%*\% results$S \%*\% t(results$V)
+}
 }
 \references{
 Wentzell, P. D.

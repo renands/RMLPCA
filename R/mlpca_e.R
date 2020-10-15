@@ -33,6 +33,7 @@
 #' @export
 #' @examples
 #'
+#' \dontrun{
 #' library(RMLPCA)
 #' data(data_clean_e)
 #' data(data_error_e)
@@ -51,6 +52,7 @@
 #'
 #' # estimated clean dataset
 #' data_cleaned_mlpca <- results$U %*% results$S %*% t(results$V)
+#' }
 mlpca_e <- function(X, Cov, p, MaxIter = 20000) {
   m <- base::dim(x = X)[1]
 
