@@ -1,6 +1,6 @@
 Package: RMLPCA
 Title: Maximum Likelihood Principal Component Analysis 
-Version: 0.0.0.9000
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Renan",
            family = "Santos Barbosa",
@@ -20,7 +20,9 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Imports: 
     base,
     Matrix,
