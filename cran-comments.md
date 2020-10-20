@@ -1,4 +1,5 @@
 ## Resubmission
+This is a resubmission. In this version I have:
 * Changed version number to a more sensible number, 0.0.1
 * Added a reference in the Description that explains all the algorithms in this package
 
