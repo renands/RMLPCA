@@ -1,6 +1,6 @@
 Package: RMLPCA
 Title: Maximum Likelihood Principal Component Analysis 
-Version: 0.1.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Renan",
            family = "Santos Barbosa",
@@ -9,6 +9,8 @@ Authors@R:
 Description: R implementation of Maximum Likelihood Principal Component Analysis
     The main idea of this package is to have an alternative way of PCA for 
     subspace modeling that considers measurement errors.
+    More details can be found in Peter D. Wentzell (2009) 
+    <doi:10.1016/B978-0-444-64165-6.03029-9>.
 URL: https://github.com/renanestatcamp/RMLPCA
 BugReports: https://github.com/renanestatcamp/RMLPCA/issues
 License: MIT + file LICENSE

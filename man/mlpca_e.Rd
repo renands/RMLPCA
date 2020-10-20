@@ -2,7 +2,7 @@
 % Please edit documentation in R/mlpca_e.R
 \name{mlpca_e}
 \alias{mlpca_e}
-\title{Maximum likelihood orincipal component analysis for mode E error conditions}
+\title{Maximum likelihood principal component analysis for mode E error conditions}
 \usage{
 mlpca_e(X, Cov, p, MaxIter = 20000)
 }
