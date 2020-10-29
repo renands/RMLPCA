@@ -39,7 +39,7 @@ modeling technique and not a variance modeling technique.
 }
 \examples{
 
-\dontrun{
+\donttest{
 library(RMLPCA)
 data(data_clean_e)
 data(data_error_e)

@@ -33,7 +33,7 @@
 #' @export
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' library(RMLPCA)
 #' data(data_clean_e)
 #' data(data_error_e)
