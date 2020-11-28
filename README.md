@@ -1,4 +1,7 @@
 # RMLPCA <img src='man/figures/HEXRMLPCA.png' align="right" height="135" /></a>
+[![Build Status](https://travis-ci.org/renanestatcamp/RMLPCA.svg?branch=master)](https://travis-ci.org/renanestatcamp/RMLPCA)
+
+
 R Implementation of Maximum Likelihood Principal Component Analysis
 
 ## Description
