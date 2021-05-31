@@ -27,5 +27,5 @@ install.packages("devtools")
 This R package is a public repository on Github, to install the package on your machine just type the following command:
 
 ``` R
-devtools::install_git("https://github.com/renanestatcamp/RMLPCA")
+devtools::install_git("https://github.com/renands/RMLPCA")
 ```
